@@ -1,38 +1,62 @@
-🪐 GMAPS: Computational Physics & Scientific SandboxThe hands-on computational proving ground for the George Mason University Physics & Astronomy Society (GMAPS / FOTO).Zero local installation required. Open in your browser via GitHub Codespaces, pick your language, and start breaking physical laws.🧭 Table of ContentsWhy This Repository ExistsThe Dual-Language Mandate: Python vs. JuliaRepository ArchitectureCurriculum Overview (Notebooks 01–05)Getting Started (Zero-Install Devcontainer)Contribution & Git WorkflowContributor Roles & Server RecognitionThe "Endgame" Protocol: Submitting Community ChallengesAcademic Integrity & Honor Code🌌 Why This Repository ExistsMost undergraduate physics homework treats computation like an afterthought: a clunky spreadsheet exercise or a script copy-pasted at 2:00 AM on a Sunday.In real-world research—whether you are isolating $Z$-boson resonance spikes at CERN, calculating the invariant mass of relativistic jets, or reconstructing faint galactic rotation curves—analytical math and numerical execution are the exact same discipline.This sandbox is designed to:Demystify the runes: Take mathematical formalisms (Euler-Lagrange equations, Runge-Kutta integrators, singular value decomposition) and run them on live data.Kill imposter syndrome: You do not need a computer science degree to write high-performance scientific code.Build verifiable portfolio lines: Every merged challenge is an open-source commit permanently tracked on your GitHub profile and linked to your resume or graduate school application.⚡ The Dual-Language Mandate: Python vs. JuliaScientific computing has historically suffered from the "Two-Language Problem": researchers prototype ideas in an expressive, easy-to-read language (like Python or MATLAB), only to discover it runs too slowly for large-scale production, forcing them to rewrite the entire codebase in C, C++, or Fortran.To prepare you for modern research, this repository centers on the two defining languages of contemporary science:┌────────────────────────────────────────┬────────────────────────────────────────┐
-│               PYTHON                   │                 JULIA                  │
-├────────────────────────────────────────┼────────────────────────────────────────┤
-│ • The undisputed lingua franca of data │ • Engineered from day one for extreme  │
-│   science, astronomy, and AI.          │   scientific & numerical performance.  │
-│ • Rich ecosystem (NumPy, SciPy,        │ • Solves the two-language problem: JIT │
-│   Matplotlib, Astropy, SymPy).         │   compiled to native code (C speeds).  │
-│ • Universal industry applicability     │ • Syntax reads identical to chalkboard │
-│   across tech, labs, and academia.     │   math ($dx/dt = v$, Greek symbols).   │
-│ • Essential for quick prototyping and  │ • Multiple dispatch paradigm built for │
-│   massive open-source toolkits.        │   differential equations & tensors.    │
-└────────────────────────────────────────┴────────────────────────────────────────┘
-The Language Policy:Notebook 01 (Foundations): Features strictly divided parallel tracks (track-python/ and track-julia/). If you are completely new to programming, pick Python first to learn basic syntax and array mechanics. If you want cutting-edge numerical design, start with Julia.Notebooks 02 through 05: Dual-track challenges. Every problem comes with starter setups for both languages. You choose which language you want to wield to solve the problem.The "Alternative Language" Rule: You may submit solutions in C, C++, Rust, or Fortran, provided you include a WHY_AND_HOW.md demonstrating why Python or Julia was insufficient for your physical constraints and showing how to compile it with zero external dependencies.📂 Repository Architecturecomputation-challenges/
-├── .devcontainer/
-│   └── devcontainer.json              <-- Cloud environment: pre-baked Python 3.11 & Julia
-├── Notebook-01-Foundations/           <-- Entry level: variables, vectorization, Gotchas
-│   ├── track-julia/                   <-- Pure Julia syntax, structs, types
-│   └── track-python/                  <-- Pure Python/NumPy slicing, memory layouts
-├── Notebook-02-Dynamics/              <-- Numerical calculus, RK4, chaotic attractors
-├── Notebook-03-Linear-Algebra/        <-- Tensors, SVD image compression, eigenproblems
-├── Notebook-04-Roots-Optimization/    <-- Molecular potentials, non-linear fitting
-├── Notebook-05-Signals-Fields/        <-- Cooley-Tukey FFT, 2D electrostatic vector fields
-├── Notebook-06-Advanced-Frontiers/    <-- Community challenges & post-completion sandbox
-├── CONTRIBUTING.md                    <-- PR instructions & style conventions
-└── README.md                          <-- You are here
-📚 Curriculum Overview (Notebooks 01–05)🔹 Notebook 01: Foundations & The Scientific SandboxGoal: Understand memory models, vectorized array operations, and floating-point roundoff traps.Track Python:P1.1: Ballistic kinematics and asserting physical boundary conditions.P1.2: The "Where $PV=nRT$ Dies" isotherm explorer (van der Waals phase collapse).P1.3: 2D Brownian motion, random walks, and verifying Einstein's $\langle r^2 \rangle \propto t$.Track Julia:J1.1: Artillery tables, array broadcasting (.), and angle of reach calculations.J1.2: Simulating the Curta mechanical calculator via bitwise ALU shifts.J1.3: Modeling Falcon 9 propellant depletion using custom mutable structs.🔹 Notebook 02: Numerical Calculus & Dynamical SystemsGoal: Move beyond pen-and-paper integrals; handle non-linear differential equations and deterministic chaos.02.1: Forward vs. central finite differences and finding the catastrophic cancellation floor ($h_{\text{opt}} \sim \sqrt{\epsilon_m}$).02.2: The chaotic driven pendulum: implementing Runge-Kutta 4th-order (RK4) to visualize phase-space strange attractors.02.3: Quantum well bound states: solving the 1D Time-Independent Schrödinger Equation via the Shooting Method / Numerov algorithm.🔹 Notebook 03: Linear Algebra & Matrix MechanicsGoal: Ground abstract matrix spaces into physical networks, coordinate frames, and dimensionality reduction.03.1: Multi-loop Kirchhoff resistance networks, LU decomposition, and matrix condition numbers ($\kappa(A)$).03.2: Principal moments and axes of inertia: diagonalizing $3 \times 3$ rigid-body inertia tensors.03.3: Astronomical image compression: Singular Value Decomposition (SVD) and low-rank matrix approximations.🔹 Notebook 04: Roots, Optimization & Parameter FittingGoal: Find equilibria in non-linear potentials and extract physical parameters from noisy detector telemetry.04.1: Diatomic Lennard-Jones molecular potential energy minimization via gradient descent / BFGS.04.2: Non-linear least squares: fitting multi-isotope radioactive decay chains with missing (NaN) detector values.🔹 Notebook 05: Spectral Analysis & Vector FieldsGoal: Decompose signals into their constituent harmonics and visualize multivariable spatial forces.05.1: Radix-2 Cooley-Tukey Fast Fourier Transform (FFT) from scratch: identifying discrete harmonics vs. broadband chaos.05.2: Streamline mapping: discretizing 2D Poisson/Laplace equations and rendering electric vector fields $\mathbf{E} = -\nabla \phi$.🚀 Getting Started (Zero-Install Devcontainer)You do not need to install Python, Julia, VS Code, or C compilers locally to work on these challenges.Fork this repository to your personal GitHub account.Click the green Code button $\to$ select the Codespaces tab.Click Create codespace on main.GitHub will boot an isolated Linux environment in your browser configured with:Python 3.11 + NumPy, SciPy, Matplotlib, SymPy, Jupyter.The latest stable Julia release + IJulia, Plots, LinearAlgebra.Open any notebook under Notebook-01-Foundations/ and select the appropriate kernel in the top-right corner.🛠️ Contribution & Git WorkflowAll solutions and additions must be submitted via Pull Requests (PRs). We follow standard open-source branch etiquette:# 1. Clone your fork locally or work in Codespaces
-git checkout -b solve/notebook-02-rk4
+# ⚛️ GMAPS Computational Physics & Collaborative Sandbox
+> Modular physics computing, browser-based sandboxes, and verifiable portfolio builds for the George Mason Astronomy & Physics Society (`gmu-astronomy-physics-society`).
 
-# 2. Make your edits and verify all test cells pass
-# Ensure you do NOT commit bulky cache directories or .ipynb_checkpoints
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/gmu-astronomy-physics-society/computation-challenges?quickstart=1)
+[![Discord](https://img.shields.io/badge/Discord-GMAPS_Hub-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/KvQBnc2Gj)
+[![Languages](https://img.shields.io/badge/Languages-Python_%7C_Julia-blueviolet?style=flat-square)](https://github.com/gmu-astronomy-physics-society)
 
-# 3. Stage and commit your solution
-git add Notebook-02-Dynamics/
-git commit -m "feat(dynamics): complete RK4 pendulum challenge"
+---
 
-# 4. Push to your branch and open a Pull Request
-git push origin solve/notebook-02-rk4
-Pull Request Rules:One module per PR (keep diffs reviewable).Code must be cleanly commented: explain why an approximation or step size was chosen.Figures should be generated inline with labeled axes and physical SI units.🎖️ Contributor Roles & Server RecognitionEvery approved and merged PR unlocks a permanent Discord badge on the GMAPS server, showcasing your technical milestones:Contributor TierServer RoleRequirementTier 1: Solver@eigenbabySolve and merge any challenge from Notebook 01 (Python or Julia).Tier 2: Practitioner@rk4 demonSolve and merge at least 3 challenges across Notebooks 02–04.Tier 3: Veteran@hamiltonian menaceSolve advanced dynamics (02.2 chaos, 02.3 quantum shooting, or 05.1 custom FFT).Tier 4: Architect@flight directorComplete all 5 core notebooks or architect an approved custom module challenge.🏆 The "Endgame" Protocol: Submitting Community ChallengesOnce you have completed all five core notebooks, you unlock Architect Status.To keep the club’s computational curriculum alive and expanding, completers are invited to design and submit their own original computational physics challenges for incoming students.Two Ways to Submit Your Challenge:Option A: Enhance an Existing Notebook (Notebooks 01–05)If you have a problem that expands on an existing module topic (e.g., adding an asymmetric top to Notebook-03 or a damped-driven Duffing oscillator to Notebook-02):Navigate to the target notebook folder.Append a new section labeled:### Challenge [X.Y]: [Title] (Contributed by @YourGitHubHandle).Provide:The physical theoretical framing (equations in LaTeX).Starter scaffolding cells with clear TODO markers.Hidden or assert-based test cases for students to check their results.A companion solution branch or reference file.Option B: Submit to Notebook-06-Advanced-FrontiersFor advanced topics that transcend the core curriculum (e.g., General Relativity geodesics, Monte Carlo Ising models, N-body orbital resonance, Lattice Boltzmann fluid flow, or Quantum Computing circuits):Open Notebook-06-Advanced-Frontiers/.Create a dedicated folder: Challenge-[Topic-Slug]/ containing:problem.ipynb (starter notebook).solution.ipynb (verified working reference).README.md explaining the background physics and literature citations.Open a Pull Request tagged with the label community-challenge.Once reviewed by an officer or peer architect, your challenge will be merged into the official club curriculum and credited under your name!⚖️ Academic Integrity & Honor CodeDon't rob yourself of the struggle: Looking up analytical formulas is standard research; copying raw code from LLMs without understanding the numerical discretization leaves you stranded in upper-level courses.Collaborate, don't copy: We encourage working through algorithms together in the #projects-and-code Discord channel or during in-person Whiteboard Salons. If someone helps you untangle an algebraic sign error, credit them in your notebook comments!No active homework: Never submit active, graded coursework from GMU courses (such as PHYS 160/260/305/307) as custom challenges.
+## 🚀 Overview
+
+Research labs often come with heavy prerequisites and steep time commitments. **GMAPS Computational Challenges** is an asynchronous, zero-intimidation sandbox where members learn computational physics by doing real calculations—analyzing CERN collider telemetry, modeling non-linear chaotic dynamics, extracting exoplanet transit dips, and simulating quantum systems.
+
+Everything runs directly in your web browser via **GitHub Codespaces**. You don't need Python or Julia installed on your personal computer, you won't deal with broken PATH variables, and every merged solution permanently records you as an open-source contributor.
+
+---
+
+## ⚡ The Zero-Install Workflow (How to Play)
+
+1. **Get Added to the Org:** Drop your GitHub handle in the `#🚀・active-projects` channel on Discord and tag `@President` (Isa) to receive your repository invite.
+2. **Launch Cloud Environment:** Click the **Open in GitHub Codespaces** badge above. In ~60 seconds, a full VS Code environment will launch in your browser with Python, Julia, Jupyter, and all scientific libraries pre-installed.
+3. **Select a Challenge:** Navigate the `/Module-XX/` folders, open a challenge notebook (`.ipynb` or `.jl`), and tackle the 3–5 lines of missing physical math or array operations.
+4. **Test & Verify:** Run the notebook cells to generate your validation plots and verify test assertions.
+5. **Submit a Pull Request (PR):** Use the built-in VS Code **Source Control tab** (on the left sidebar) to commit your branch and submit a PR directly through GitHub. Once reviewed and merged by an officer, you earn your verified server roles and permanent portfolio credit.
+
+---
+
+## 🐍 Why Python & Julia?
+
+Our curriculum focuses strictly on **Python** and **Julia** as primary scientific computing environments:
+
+### 1. Python: The Universal Scientific Stack
+* **Ecosystem Breadth:** Python is the current lingua franca of astrophysics, data analysis, and particle physics instrumentation (`NumPy`, `SciPy`, `Matplotlib`, `Astropy`, `Lightkurve`).
+* **Glue Language:** It interfaces seamlessly with legacy C/Fortran routines and national laboratory databases (CERN Open Data, MAST, NASA Exoplanet Archive).
+* **Gentle Onramp:** Readable syntax allows beginners to immediately focus on physical intuition rather than memory management or syntax boilerplate.
+
+### 2. Julia: High-Performance Mathematical Expressiveness
+* **Solving the "Two-Language Problem":** Traditionally, scientists prototype algorithms in Python or MATLAB, then rewrite them in C++ or Fortran for execution speed. Julia eliminates this barrier by compiling directly to native machine code via LLVM, running as fast as C while remaining as expressive as Python.
+* **Multiple Dispatch & Linear Algebra:** Julia treats mathematical operations as first-class citizens. Operators match mathematical equations directly (e.g., Unicode operators like `α`, `∇`, and `×`), and its type system naturally reflects physical structures (such as coordinate tensors, custom unit systems, and state vectors).
+* **Modern Numerical Solvers:** Libraries like `DifferentialEquations.jl` provide world-class adaptive differential equation solvers that outperform standard scientific libraries.
+
+> **The Alternative Language Policy (C/C++, Rust, Fortran):**  
+> Solutions submitted in languages other than Python or Julia are welcomed **only** if accompanied by a `WHY_AND_HOW.md` document explaining:
+> 1. *Why* Python or Julia was insufficient (e.g., bare-metal microsecond timing for an SDR satellite receiver, embedded memory constraints).
+> 2. *How* to compile, test, and run the code with zero dependencies.
+
+---
+
+## 📚 Curriculum Roadmap
+
+```text
+computation-challenges/
+├── .devcontainer/                  <-- Pre-configured container configuration
+├── Module-01-Foundations/
+│   ├── track-python/               <-- Dedicated Python beginner track
+│   └── track-julia/                <-- Dedicated Julia beginner track
+├── Module-02-Dynamics/             <-- Open track (Solve in Python or Julia)
+├── Module-03-Linear-Algebra/       <-- Open track
+├── Module-04-Roots-Optimization/   <-- Open track
+├── Module-05-Spectral-Fields/      <-- Open track
+├── Module-06-Community-Challenges/ <-- Unlocked by Challenge Completers
+└── CONTRIBUTING.md                 <-- Contribution, style, and PR guidelines
